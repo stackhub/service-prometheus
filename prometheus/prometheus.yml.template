@@ -1,0 +1,19 @@
+# This is mean to be the "default" configuration for
+# our Prometheus install. For a more dynamic configuration
+# we will mount a data volume container over this file.
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+  labels:
+    monitor: stackengine-blog-metrics
+
+rule_files:
+
+scrape_configs:
+- job_name: prometheus-scraper
+  scrape_interval: 5s
+  target_groups:
+    - targets: [ {{$service := "/apps/prom-cadv-cadvisor-8080/containers/*"}}
+    {{range gets (print $service)}}
+    '{{.Value}}',{{end}}
+    ]
