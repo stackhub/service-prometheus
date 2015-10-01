@@ -7,4 +7,4 @@
 sed s#SE_CADVISOR_KEY#$SE_CADVISOR_KEY# /etc/confd/conf.d/prometheus.toml.template > /etc/confd/conf.d/prometheus.toml
 
 # Okay now we can run confd 
-exec /usr/bin/confd -backend stackengine -node $SE_HOST_IP:8443 -scheme https -auth-token $SE_API_TOKEN -interval 5
+exec /usr/bin/confd -backend stackengine -node $SE_LEADER_IP:8443 -scheme https -auth-token $SE_API_TOKEN -interval 5
