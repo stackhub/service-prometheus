@@ -1,3 +1,8 @@
+# Purpose
+
+This repo allows for the immediate and simple use of the Prometheus monitoring
+tool.  This tool monitors container and machine activity across multiple hosts.
+
 # Overview
 
 This image, coupled with the StackEngine Container Application Center, allows
@@ -17,19 +22,6 @@ Scale without headache.
 
 # Usage
 
-The `stackhub/prometheus` image must be passed the following environment 
-variables a run time:
-
-* SE_API_TOKEN - Your token can be found under "Settings > My Profile"
-* SE_LEADER_IP - This is the IP address of the host of your StackEngine mesh 
-  leader.  It is used by the running container to find the Service Discovery 
-  layer.
-* SE_CADVISOR_KEY - The Service Registry key that tracks the running instances
-  `cadvisor`.  IT will be of the form 
-  `apps/<INSTANCE_NAME>-<cadvisorServiceName_cAdvisorServicePort>/containers`
-  for example `apps/prom-cadv-cadvisor-8080/containers`
-* SE_CADVISOR_RANGE - The Service Registry key expressed as a range.  For
-  example `/apps/prom-cadv-cadvisor-8080/containers/*`
 
 For an example stack file, please see the 
 [`stack-prometheus` repo](http://github.com/stackhub/stack-prometheus).
