@@ -6,6 +6,6 @@ dest = "/etc/prometheus/prometheus.yml"
 # service in the StackEngine CAC.  Don't forget to also adjust
 # this value in `/etc/confd/templates/haproxy.cfg.template
 keys = [
-"SE_CADVISOR_KEY"
+"apps/SE_SERVICE_DISCOVERY_KEY/containers"
 ]
-reload_cmd = "killall -HUP prometheus"
+reload_cmd = "sv reload prometheus"

@@ -6,8 +6,14 @@ you to monitor any number of docker hosts and their containers using Google's
 
 The Prometheus configuration is extremely simple so as to offer very little
 opinion on how a user would run the Prometheus service itself. For
-information on configuring Prometheus to meet your needs, please see [their 
+information on configuring Prometheus to meet _your_ needs, please see [the 
 documentation](http://prometheus.io/docs/operating/configuration/).
+
+When coupled with the StackEngine Scheduler, use of this container means that
+adding a new host to your mesh through the container applicaiton center will 
+see `cAdvisor` start on that host and register itself with Prometheus. 
+
+Scale without headache.
 
 # Usage
 
